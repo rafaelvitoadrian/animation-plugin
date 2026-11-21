@@ -1,0 +1,4 @@
+interface:
+  display_name: "Animation Video"
+  short_description: "Buat animasi dari storyboard dan voiceover"
+  default_prompt: "Pakai $animation-video untuk membuat animasi dari storyboard dan voiceover di proyek ini."
