@@ -6,7 +6,7 @@ Jika pengguna menulis `/animation-video`, `@animation-video`, atau `$animation-v
 
 - Pertahankan satu sumber skill untuk Codex, Antigravity, dan Claude Code. Metadata khusus host hanya untuk penemuan atau tampilan.
 - Ubah komposisi di sumbernya. Pertahankan timing voiceover, format, serta preferensi overlay yang sudah ditetapkan pengguna.
-- Gunakan input sintetis untuk pengujian. Jangan commit file media pengguna, hasil render, dependensi, token, atau kit pihak ketiga.
+- Gunakan input sintetis untuk pengujian. Jangan commit file media pengguna, hasil render, dependensi terpasang, atau token. RVA Stickman adalah kit yang diminta pengguna untuk disertakan. Pertahankan manifest dan atribusi aslinya.
 - Jalankan `node --test` sebelum mengajukan perubahan. Uji jalur ekspor CPU dan NVENC bila mengubah encoder dan perangkat mendukungnya.
 - Perbarui README saat cara instalasi, pemanggilan, atau kebutuhan runtime berubah.
 

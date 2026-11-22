@@ -1,6 +1,6 @@
 # Animation Plugin
 
-`animation-video` adalah Agent Skill untuk membuat video bergerak dari storyboard dan voiceover. Skill ini mencakup timing narasi, pembuatan adegan, Remotion dan Three.js, penggunaan opsional GrowKaz Stickman, ekspor MP4 lokal, serta penulisan caption unggahan.
+`animation-video` adalah Agent Skill untuk membuat video bergerak dari storyboard dan voiceover. Skill ini mencakup timing narasi, pembuatan adegan, Remotion dan Three.js, kit bawaan RVA Stickman, ekspor MP4 lokal, serta penulisan caption unggahan.
 
 ## Instalasi
 
@@ -23,6 +23,8 @@ Di Windows, ganti path dengan folder seperti `D:\Video\Proyek Saya`. Buka kembal
 
 [Panduan Codex](https://learn.chatgpt.com/docs/build-skills) · [Panduan Antigravity](https://antigravity.google/docs/skills) · [Panduan Claude Code](https://code.claude.com/docs/en/skills)
 
+Installer selalu menyalin arsip `RVA_Stickman.plugin` dan kit siap diimpor ke `animation-video/vendor/rva-stickman/`. Keduanya ikut saat menyalin folder skill secara manual. Skill mengakses kit langsung dari folder tersebut, tanpa perlu mendaftarkan plugin secara global. Jika versi sebelumnya sudah terpasang, jalankan `git pull` di repo ini, pindahkan folder skill lama ke luar direktori `skills` sebagai cadangan, lalu jalankan kembali perintah instalasi.
+
 ## Cara pakai
 
 Simpan storyboard dan voiceover di folder proyek, lalu pilih cara panggil sesuai aplikasi:
@@ -35,7 +37,7 @@ Cara yang berlaku di semua aplikasi adalah menulis “Pakai skill animation-vide
 
 > Pakai skill animation-video. Buat animasi bergerak dari storyboard dan voiceover dalam folder ini. Gunakan Remotion untuk timeline dan Three.js untuk adegan 3D. Ekspor vertikal 1080 × 1920, 30 fps dengan NVIDIA NVENC. Jangan tampilkan subtitle, label, atau baris progres. Tulis juga caption Reels, Shorts, dan TikTok.
 
-Untuk gaya GrowKaz, tambahkan permintaan menggunakan GrowKaz Stickman dan sertakan lokasi kit milik Anda. Proyek Remotion, aset media, dan kit pihak ketiga dipasang terpisah. Repo ini tidak menyertakan rekaman, video pengguna, atau salinan plugin GrowKaz.
+Untuk gaya stickman, tambahkan “Gunakan RVA Stickman bawaan” pada prompt. Nama berkas lampiran adalah `RVA_Stickman.plugin`. Manifest di dalamnya tetap memakai nama `growkaz-stickman` versi 1.1.0 dan mencantumkan kredit GrowKaz. Proyek Remotion dan aset media disiapkan per proyek.
 
 Jika sudah memiliki hasil render frame Remotion, gunakan [panduan ekspor](skills/animation-video/references/remotion.md) dan skrip `encode.mjs`. Pakai `--ffmpeg "C:\path\to\ffmpeg.exe"` bila FFmpeg tidak ada di PATH.
 

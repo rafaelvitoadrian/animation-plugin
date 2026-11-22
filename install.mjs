@@ -11,6 +11,13 @@ if (!Object.hasOwn(paths, agent ?? '') || !directory || extra.length) {
 
 const project = realpathSync(resolve(directory));
 const source = fileURLToPath(new URL('./skills/animation-video', import.meta.url));
+const bundledPlugin = join(source, 'vendor', 'rva-stickman');
+for (const file of ['RVA_Stickman.plugin', '.claude-plugin/plugin.json', 'skills/make-2d-video/kit/engine/rig2d.js']) {
+  if (!existsSync(join(bundledPlugin, file))) {
+    console.error('Bundel RVA Stickman tidak lengkap. Ambil ulang repo:', file);
+    process.exit(1);
+  }
+}
 const parent = join(project, paths[agent], 'skills');
 const destination = join(parent, 'animation-video');
 if (existsSync(destination)) {
@@ -20,3 +27,4 @@ if (existsSync(destination)) {
 mkdirSync(parent, {recursive: true});
 cpSync(source, destination, {recursive: true, force: false, errorOnExist: true});
 console.log('Skill terpasang di', destination);
+console.log('RVA Stickman ikut terpasang di', join(destination, 'vendor', 'rva-stickman'));

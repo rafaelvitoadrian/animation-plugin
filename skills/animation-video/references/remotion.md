@@ -6,7 +6,7 @@ Periksa `package.json` dan komposisi yang ada. Untuk proyek baru, jalankan gener
 
 Masukkan audio ke `public/` dan gunakan `staticFile()`. Daftarkan komposisi dengan FPS dan durasi `ceil(durasiAudio × fps)`. Gunakan `useCurrentFrame()`, `useVideoConfig()` dan `Sequence` untuk timing. Untuk Canvas 2D, gambar frame di `useLayoutEffect`. Untuk Three.js gunakan `ThreeCanvas`, turunkan pose dari frame, dan uji satu frame WebGL sebelum render penuh.
 
-Jika memakai GrowKaz Stickman, gunakan salinan kit yang pengguna sudah miliki atau instal dari sumber yang ia izinkan. Impor hanya modul yang diperlukan, misalnya `engine/rig2d.js` untuk pose dan rim light serta `engine/fx2d.js` untuk atmosfer. Buat set dan aksi baru sesuai naskah. Jangan anggap instalasi kit di satu mesin berlaku di mesin lain. Repo skill ini tidak menyertakan kit GrowKaz.
+Gunakan kit RVA Stickman yang ikut tersalin di `../vendor/rva-stickman/skills/make-2d-video/kit/` (relatif terhadap file referensi ini). Manifest di bundel mencatat nama internal `growkaz-stickman` dan kredit GrowKaz. Salin modul yang diperlukan beserta impor lokalnya ke dalam proyek Remotion, atau impor dari salinan kit di workspace. Contohnya, `engine/rig2d.js` untuk pose dan rim light, serta `engine/fx2d.js` untuk atmosfer. Buat set dan aksi baru sesuai naskah, lalu gunakan Remotion sebagai renderer ketika diminta. Perintah dan skrip instalasi dari dokumen bawaan kit berlaku untuk mode studio mandiri dan tidak perlu dijalankan untuk mengimpor modul di Remotion.
 
 ## Pratinjau dan ekspor
 
